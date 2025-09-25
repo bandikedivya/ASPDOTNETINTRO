@@ -1,0 +1,9 @@
+﻿Controller: 
+
+		Controller is kind of a class where we can prepare the endpoints/resources. 
+
+What is IActionResult?
+
+IActionResult is defined in the Microsoft.AspNetCore.Mvc namespace.
+
+It is the base interface for many possible action results (responses) that a controller action can return.
