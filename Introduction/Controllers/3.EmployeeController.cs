@@ -60,7 +60,7 @@ namespace Introduction.Controllers.Employees_2
         }
 
         // Post --  used to insert the data(from the body) and also filter & we can also trim the data.
-
+        // we can get the result set, by using the post also.
         //https://localhost:7287/api/EmployeeV3/GetEmployeesList_filter
         [HttpPost]
         [Route("GetEmployeesList_filter")]
@@ -78,6 +78,47 @@ namespace Introduction.Controllers.Employees_2
                 return Ok(result);
             }
         }
+
+        //https://localhost:7287/api/EmployeeV3/CreateEmployee
+        //Create the new user story
+        [HttpPost]
+        [Route("CreateEmployee")]
+        public async Task<IActionResult> CreateEmployee(
+           [FromBody] NewEmployeeDTO newemployee)
+        {
+
+            var result = await NewEmployee(newemployee);
+            if (result == "Failed")
+            {
+                return BadRequest("Employee deatils are not good narmada . please give proepr details");
+            }
+
+            return Created("Api/Employeev3/CreateEmployee", newemployee);
+        }
+
+        //Create the new user story
+        [HttpPost]
+        [Route("CreateEmployee1")]
+        public async Task<IActionResult> CreateEmployee1()
+        {
+            await Task.Delay(1000);
+            return Ok("succes");
+
+        }
+
+
+        private async Task<string> NewEmployee(NewEmployeeDTO newemployee)
+        {
+
+            await Task.Delay(2000);
+
+            if (string.IsNullOrWhiteSpace(newemployee.Name))
+            {
+                return "failed";
+            }
+            return "Success";
+
+        }
     }
 }
 public class EmployeeDTO
@@ -85,4 +126,16 @@ public class EmployeeDTO
     public string EmpName { get; set; }
     public string Location { get; set; }
     public double Salary { get; set; }
+}
+public class NewEmployeeDTO
+{
+    public string? Name { get; set; }
+    public string Location { get; set; }
+    public decimal Salary { get; set; }
+    public int Age { get; set; }
+    public DateTime JoiningDate { get; set; }
+    public DateTime? DOB { get; set; } // optional parameter.
+    public string? StreetAddress { get; set; }  // optional parameter.
+
+
 }
