@@ -2,8 +2,6 @@
 using System.Threading.Tasks;
 
 
-//Postman 1 day fire   - this is very common testers , BA , DB , frontend , backend , freshers
-// Testing your apis weahter your request and response is properly working on thtat
 
 // DI , GUID , static class , angular , headers , params , body(post) , put , pathc , delete
 
@@ -144,25 +142,25 @@ namespace Introduction.Controllers.Employees_2
         //}
 
         //DTO
-        //https://localhost:7051/api/EmployeeV2/GetEmployeesListByLocatinAndSalaryWithMultiQueryParams?empname=John&location=New%20York&salary=28000
+        //https://localhost:7287/api/EmployeeV2/GetEmployeesListByLocatinAndSalaryWithMultiQueryParamsWithDTO?empname=John&location=New%20York&salary=28000
 
-        //[HttpGet]  // if the request is data fetch then desing with httpget
-        //[Route("GetEmployeesListByLocatinAndSalaryWithMultiQueryParamsWithDTO")]
-        //public async Task<IActionResult> GetEmployeesListByLocatinAndSalaryWithQueryWithDTO(
-        //    [FromQuery] EmployeeDTO employee)
-        //{
-        //    var employeesList = await GetEmployees();  // given the resoponse to the guy who asked the data
-        //    var result = employeesList.Where(x => x.EmpLocation == employee.Location && x.EmpSalary > employee.Salary && x.EmpName == employee.EmpName);
-        //    if (!result.Any())
-        //    {
-        //        return NotFound($"No employees found with salary and location {employee.Location} - {employee.Salary} ");   // 404 Not found
-        //    }
-        //    else
-        //    {
-        //        return Ok(result);
-        //    }
-        //    //  return Ok(new List<string> { "JOHN", "PEter" });  // 200 success code . json
-        //}
+        [HttpGet]  // if the request is data fetch then desing with httpget
+        [Route("GetEmployeesListByLocatinAndSalaryWithMultiQueryParamsWithDTO")]
+        public async Task<IActionResult> GetEmployeesListByLocatinAndSalaryWithQueryWithDTO(
+            [FromQuery] EmployeeDTO employee)
+        {
+            var employeesList = await GetEmployees();  // given the resoponse to the guy who asked the data
+            var result = employeesList.Where(x => x.EmpLocation == employee.Location && x.EmpSalary > employee.Salary && x.EmpName == employee.EmpName);
+            if (!result.Any())
+            {
+                return NotFound($"No employees found with salary and location {employee.Location} - {employee.Salary} ");   // 404 Not found
+            }
+            else
+            {
+                return Ok(result);
+            }
+            //  return Ok(new List<string> { "JOHN", "PEter" });  // 200 success code . json
+        }
 
 
         private async Task<List<Employee>> GetEmployees()
@@ -195,11 +193,10 @@ namespace Introduction.Controllers.Employees_2
     }
 
 
-    //public class EmployeeDTO
-    //{
-    //    public string EmpName { get; set; }
-    //    public string Location { get; set; }
-    //    public double Salary { get; set; }
-
-    //}
+    public class EmployeeDTO
+    {
+        public string EmpName { get; set; }
+        public string Location { get; set; }
+        public double Salary { get; set; }
+    }
 }
