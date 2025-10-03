@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 
 
-// DI , GUID , static class , angular , headers , params , body(post) , put , pathc , delete
+// DI , GUID , static class , angular , headers , params , body(post) , put , path , delete
 
 
 
