@@ -1,3 +1,5 @@
+using Introduction;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,7 +24,8 @@ builder.Services.AddCors((cors) =>
     });
 });
 
-
+//you are creating the instance   IEmployeeV2Reposiotry   = new InMemoryEmployeeRepository( i am the boss angularcorecomipler
+builder.Services.AddScoped<IEmployeeV2Reposiotry, InMemoryEmployeeRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
