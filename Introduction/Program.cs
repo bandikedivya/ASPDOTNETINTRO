@@ -1,8 +1,14 @@
+using Introduction.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddSingleton<ISingletonCoffee, CoffeeServices>();
+builder.Services.AddScoped<IScopedCoffee, CoffeeServices>();
+builder.Services.AddTransient<ITransientCoffee, CoffeeServices>();
 
 //builder.Services.AddCors((cors) =>
 //{

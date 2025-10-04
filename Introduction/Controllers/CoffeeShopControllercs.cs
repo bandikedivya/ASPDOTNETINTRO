@@ -47,9 +47,9 @@ namespace Introduction.Controllers
 
             var Scopedresult = new CoffeeType { cup1 = _scopedCoffee1.GetCoffeeId(), cup2 = _scopedCoffee2.GetCoffeeId() };
 
-            var Transtitent = new CoffeeType { cup1 = _transientCoffee1.GetCoffeeId(), cup2 = _transientCoffee2.GetCoffeeId() };
+            var Transtitentresult = new CoffeeType { cup1 = _transientCoffee1.GetCoffeeId(), cup2 = _transientCoffee2.GetCoffeeId() };
 
-            var FinalResult = new { SingleTonresult, Scopedresult, Transtitent };
+            var FinalResult = new { SingleTonresult,Scopedresult, Transtitentresult };
             return Ok(new { FinalResult });
         }
 
