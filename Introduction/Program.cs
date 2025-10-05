@@ -1,3 +1,5 @@
+using Introduction;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -40,7 +42,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowLocalhost4200");
 
+//To use the middleware, should register here
+
+app.UseMiddleware<HTTPContextMiddleware>();
+
 app.UseHttpsRedirection();
+
 
 app.UseAuthorization();
 
