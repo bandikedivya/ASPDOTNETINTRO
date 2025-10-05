@@ -24,7 +24,7 @@ namespace Introduction.Controllers
 
 
         //httpcontext --> request and response
-        //https://localhost:7115/api/HttpContextDemo/ShowContext/1?age=20&location=hye
+        //https://localhost:7287/api/HttpContextDemo/ShowContext/1?age=20&location=hye
         [HttpPost("ShowContext/{Id}")]
         public IActionResult ShowContext(
             int Id,   //Router param

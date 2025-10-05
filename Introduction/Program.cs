@@ -44,7 +44,11 @@ app.UseCors("AllowLocalhost4200");
 
 //To use the middleware, should register here
 
-app.UseMiddleware<HTTPContextMiddleware>();
+//app.UseMiddleware<HTTPContextMiddleware>();
+
+app.UseHttpContextDemo();
+
+app.UseLoggingContextDemo();
 
 app.UseHttpsRedirection();
 
