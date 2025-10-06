@@ -1,4 +1,6 @@
-﻿namespace Introduction
+﻿using Introduction.Middleware;
+
+namespace Introduction.Extensions
 {
     public static class MiddlewareExtensions
     {

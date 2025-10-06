@@ -1,1 +1,11 @@
-﻿
+﻿Middleware: 
+It is a main gate keeper of the project.
+
+Authentication:
+parameters for authentication: 
+role -- designation(like farmer, engineer)
+claims -- user details like name, address, mail id, mobile number.
+issuer
+audience -- validators (who validates token)
+signature details
+expiry details
