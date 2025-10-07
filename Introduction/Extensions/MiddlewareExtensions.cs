@@ -23,7 +23,7 @@ namespace Introduction.Extensions
         //}
         public static IApplicationBuilder UseAuthenticationDemo(this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<LoggingMiddleware>();
+            return builder.UseMiddleware<AuthenticationMiddleware>();
         }
 
 
