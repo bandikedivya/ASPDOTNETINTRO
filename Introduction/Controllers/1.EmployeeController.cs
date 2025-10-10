@@ -13,7 +13,8 @@ namespace Introduction.Controllers.Employee_1
         // to prepare the endpoints, we should make sure that, to design with the asynchronous calls.
         public EmployeeV1Controller() { }
 
-        [HttpGet]  // if the request is data fetch then desing with httpget
+        // https://localhost:7287/api/EmployeeV1/GetEmployeesList
+        [HttpGet]  // if the request comes, data fetch then desing with httpget
         [Route("GetEmployeesList")]
         public async Task<IActionResult> GetEmployeesList()
         {
@@ -56,3 +57,5 @@ namespace Introduction.Controllers.Employee_1
     }
 }
 //https://localhost:7287/api/EmployeeV1/GetEmployeeList
+
+
