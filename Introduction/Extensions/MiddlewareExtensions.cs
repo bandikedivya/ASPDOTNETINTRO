@@ -21,15 +21,16 @@ namespace Introduction.Extensions
         //{
         //    return builder.UseMiddleware<HTTPContextMiddleware>();
         //}
+
         public static IApplicationBuilder UseAuthenticationDemo(this IApplicationBuilder builder)
         {
             return builder.UseMiddleware<AuthenticationMiddleware>();
         }
 
 
-        //public static IApplicationBuilder UseDemo(this IApplicationBuilder builder)
-        //{
-        //    return builder.UseMiddleware<LoggingMiddleware>();
-        //}
+        public static IApplicationBuilder UseJWTAuthenticationDemo(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<JWTAuthenticationMiddleware>();
+        }
     }
 }

@@ -9,3 +9,16 @@ issuer
 audience -- validators (who validates token)
 signature details
 expiry details
+
+
+
+
+SymmetricSecurity key (method) used to convert the secret key into the bytaarray.[in JWT Token]
+// To use this method, we should use Microsoft.IdentityModel.Tokens namespace.
+
+
+
+.WriteToken(token) will convert(Serialization) to string [from object to string]
+
+In postman--- 
+while passing jwt token in headers, "Bearer" is a keyword(authorisation header) must be passed, it is a part of the http authentication standard. Rule called RFC650.
