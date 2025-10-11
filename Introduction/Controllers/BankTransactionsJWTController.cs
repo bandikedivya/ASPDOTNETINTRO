@@ -15,7 +15,7 @@ namespace Introduction.Controllers
             _JWTAuthenticationService = jWTAuthenticationService;
         }
 
-        //https://localhost:7287/api/BankTransactionsJWT/GetCustomerTransactions
+        //https://localhost:7/api/BankTransactionsJWT/GetCustomerTransactions
         [HttpPost("GetCustomerTransactions")]  //Madan
         public IActionResult GetCustomerTransactions()
         {
@@ -27,7 +27,8 @@ namespace Introduction.Controllers
 
 
 
-        //Autherzition
+        //Authorization -- attribute
+        // this is a action filter, checks the authenticated user having the access to particular resource or not.
         //wheater authetincated user having to access the particular resoruce or not
         [Authorize(Roles = "Customer")]
         [HttpPost("GetBankLevelTransactions")]

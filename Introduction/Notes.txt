@@ -22,3 +22,8 @@ SymmetricSecurity key (method) used to convert the secret key into the bytaarray
 
 In postman--- 
 while passing jwt token in headers, "Bearer" is a keyword(authorisation header) must be passed, it is a part of the http authentication standard. Rule called RFC650.
+
+
+
+//Authorization -- attribute
+        // this is a action filter, checks the authenticated user having the access to particular resource or not.
