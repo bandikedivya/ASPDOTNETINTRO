@@ -59,7 +59,7 @@ namespace Introduction.Controllers.Employees_2
 
 
         [HttpGet]  // if the request is data fetch then desing with httpget
-        [Route("GetEmployeesListByLocatinAndSalary/{location}/{salary:double}")]
+        [Route("GetEmployeesListByLocatinAndSalary/{location}/{salary}")]
         public async Task<IActionResult> GetEmployeesListByLocatinAndSalary(string location, double salary)
         {
             var employeesList = await GetEmployees();  // given the resoponse to the guy who asked the data
@@ -187,16 +187,16 @@ namespace Introduction.Controllers.Employees_2
     public class Employee
     {
         public int EmpId { get; set; }
-        public string EmpName { get; set; }
-        public string EmpLocation { get; set; }
+        public string? EmpName { get; set; }
+        public string? EmpLocation { get; set; }
         public double EmpSalary { get; set; }
     }
 
 
     public class EmployeeDTO
     {
-        public string EmpName { get; set; }
-        public string Location { get; set; }
+        public string? EmpName { get; set; }
+        public string? Location { get; set; }
         public double Salary { get; set; }
     }
 }

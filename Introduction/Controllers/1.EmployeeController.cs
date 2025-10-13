@@ -20,7 +20,7 @@ namespace Introduction.Controllers.Employee_1
         {
 
 
-            string EmpName = "Madan";
+            string EmpName = "PEter";
 
 
             var employeesList = await GetEmployees();  // given the resoponse to the guy who asked the data
@@ -55,7 +55,29 @@ namespace Introduction.Controllers.Employee_1
             return Ok(new List<string> {"Conrad", "Fisher"});
         }
     }
+
+    
 }
 //https://localhost:7287/api/EmployeeV1/GetEmployeeList
+
+
+//public class employee
+//{ 
+//    public string? name { get; set; }
+    
+//}
+//public class EployeeController : ControllerBase
+//{
+//   List<employee> Employees = new List<employee>
+//   {
+//       new employee{name = "John"},
+//       new employee{name = "narmada"},
+//       new employee{name = "swapna"}
+//   };
+
+//}
+
+
+
 
 
