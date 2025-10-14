@@ -1,6 +1,6 @@
 ﻿using Introduction.Models;
 using Microsoft.EntityFrameworkCore;
-namespace Introduction
+namespace Introduction.Data
 {
 
     // Step - 1

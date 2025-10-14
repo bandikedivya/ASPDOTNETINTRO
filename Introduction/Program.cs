@@ -1,4 +1,6 @@
-using Introduction;
+using Introduction.Data;
+using Introduction.Repositories;
+using Introduction.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<TestDataDBContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("TestDataDB")));
+
+//DI
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+//DI
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 //builder.Services.AddCors((cors) =>
 //{

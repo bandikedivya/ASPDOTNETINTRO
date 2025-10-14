@@ -1,0 +1,57 @@
+﻿ORM Tool: mapping tool which maps objects(C#) and tables(sql)
+
+1. Code First Approach
+In Ef, we create models. By using methods we convert the models/class into tables.(by using few commands)we can create/insert tables into the database....this approach is called Code First Approach.
+
+2. Data First Approach
+by using scaffold template, can convert Table to Model/class .
+
+Needed few namespaces(by default won't be available. So need to install few packages)
+Tools < NuGet Package Manager < Manage NuGet Packages for Solutions. -- Path 
+Packages to be installed: 
+MicroSoft.EntityFrameworkCore --- 9.0.9 version
+MicroSoft.EntityFrameworkCore.SqlServer  --- same version
+
+Advantage: 
+Can convert the classed into tables and you can push those tables into the database(for this, we need to config database address).
+For Address-- 	
+Right click on the DESKTOP-S7PONG1\SQLEXPRESS < Properties < View Connection Properties
+
+
+To Give the connection to database, should give command/code in appsettings.json.[Like]
+"ConnectionStrings": {
+"TestDataDB": "Server=DESKTOP-S7PONG1\\SQLEXPRESS;Database=TestDataDB;Trusted_Connection=true;TrustServerCertificate=True"
+}
+Then:
+Should configure in Program.cs file.
+
+builder.Services.AddDbContext<TestDataDBContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("TestDataDB")));
+
+Then: (after configuration in TestDataDBContext.cs file)
+Tools<NuGet Package Manager<Package Manager Console -- Path
+
+Command need to be executed in package manager console:
+ 
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Add-Migration AddCustomerTable
+Update-Database
+
+
+---Repositories: always works with the DbContext
+---Controllers: which is useful to work with the api's.
+---Services: This provides data to the components[in ang]. (this plays major role in the repository design pattern).
+// Services acts as a middleware/bridge btw the controllers and repositories.
+
+
+<IEnumerable> --kind of interface for the list
+which is part of the collections(list) and which provides some default methods.
+
+
+// Controllers shouldn't communicate directly to the repository/repositories.
+It should/can communicate with the services. 
+
+
+
+/// DTO --- Data Transfer Object
+-----Required fields will be configured and sent.
+-----It is a process of configuring the required columns/fields.
