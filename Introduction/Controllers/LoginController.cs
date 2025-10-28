@@ -11,6 +11,7 @@ namespace Introduction.Controllers
         IAuthenticationService _AuthenticationService;
         public LoginController(IAuthenticationService authenticationService)
         {
+            // authenticationServie contains the new AuthenticationService()
             _AuthenticationService = authenticationService;
         }
 
