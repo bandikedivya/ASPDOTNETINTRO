@@ -47,16 +47,31 @@ namespace Introduction.Controllers.Employee_1
             return new List<string> { "JOHN", "PEter", "PEter" };
         }
 
-        [HttpGet]  // if the request, to fetch the data, we use httpget
+        //[HttpGet]  // if the request, to fetch the data, we use httpget
+        //[Route("GetEmployeeList")]
+        //public async Task<IActionResult> GetEmployeeList()
+        //{
+        //    await Task.Delay(3000);
+        //    return Ok(new List<string> {"Conrad", "Fisher"});
+        //}
+
+        [HttpGet]
         [Route("GetEmployeeList")]
-        public async Task<IActionResult> GetEmployeeList()
+        public IActionResult GetEmployeeList()
         {
-            await Task.Delay(3000);
-            return Ok(new List<string> {"Conrad", "Fisher"});
+            return Ok(new List<string> { "Conrad", "Fisher" });
         }
+
+        [HttpGet]
+        [Route("GetEmployeeList1")]
+        public IActionResult GetEmployeeList1()
+        {
+            return Ok(new List<string> { "Conrad", "Fisher" });
+        }
+
     }
 
-    
+
 }
 //https://localhost:7287/api/EmployeeV1/GetEmployeeList
 
